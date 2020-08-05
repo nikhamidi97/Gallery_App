@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import auth from '@react-native-firebase/auth';
 import { View, Text, StyleSheet,TextInput,TouchableOpacity } from 'react-native';
 
-// create a component
 class EmailAndPassword extends Component {
     state={
         email:'',
@@ -16,7 +15,18 @@ class EmailAndPassword extends Component {
         .then(this.onLoginSuccess)
         .catch(err => {
             this.setState({
-                error:'syed hudoh'
+                error:'Invalid email or password'
+            })
+        })
+
+    
+    }
+    onAnonymPress = () =>{
+        auth().signInAnonymously()
+        .then(this.onLoginSuccess)
+        .catch(err => {
+            this.setState({
+                error:'Invalid email or password'
             })
         })
 
@@ -52,10 +62,14 @@ class EmailAndPassword extends Component {
                  <TouchableOpacity style={styles.buttonContainer} onPress={this.onBottomPress} >
                      <Text style={styles.buttonText}>Login</Text>
                  </TouchableOpacity>
+                 
+                 <TouchableOpacity style={styles.buttonAnom} onPress={this.onAnonymPress} >
+                     <Text style={{color:"#3B3B98", alignSelf:"center"}}>Sign as anonymous</Text>
+                 </TouchableOpacity>
 
                  <Text style={styles.errorText} >
                          {this.state.error}
-                     </Text>
+                </Text>
             </View>
         );
     }
@@ -66,8 +80,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding:20
-      
-     
     },
     input:{
         height:40,
@@ -93,6 +105,11 @@ const styles = StyleSheet.create({
     },
     buttonContainer:{
         backgroundColor:'#3B3B98',
+        padding:15,
+        borderRadius:8
+    },
+    buttonAnom:{
+        marginTop:20,
         padding:15,
         borderRadius:8
     }

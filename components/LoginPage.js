@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import auth from '@react-native-firebase/auth';
-import { View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import LoginForm from './LoginForm';
 import HomePage from './HomePage';
 import Loading from './Loading';
