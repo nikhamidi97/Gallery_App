@@ -20,9 +20,9 @@ export default class MyClass extends Component{
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => this.props.navigation.navigate('Chapter')} title="info4993">
                     <Text style={styles.textedit}>
-                        INFO 4993 - SEMESTER 2 2019/2020
+                        INFO 4024 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
@@ -32,9 +32,9 @@ export default class MyClass extends Component{
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => this.props.navigation.navigate('Chapter')} title="info4993">
                     <Text style={styles.textedit}>
-                        INFO 4993 - SEMESTER 2 2019/2020
+                        INFO 4024 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 

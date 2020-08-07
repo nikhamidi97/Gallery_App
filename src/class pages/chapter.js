@@ -89,6 +89,66 @@ export default class Chapter extends Component{
                     student: 40/40 
                 </Text>
             </TouchableOpacity>
+
+            <TouchableOpacity
+            style={styles.textedit}
+            onPress={() => this.props.navigation.navigate('StudentAttend')} title="info4993" >
+                <Text style={{fontWeight:'900', color:'#595959', fontSize:20, marginLeft:8}} >
+                    Chapter 4                   
+                </Text>
+
+                <Text style={{fontSize:15, paddingTop:4, marginLeft:170, color:'#595959' }}> 
+                    student: 36/40 
+                </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            style={styles.textedit}
+            onPress={() => this.props.navigation.navigate('StudentAttend')} title="info4993" >
+                <Text style={{fontWeight:'900', color:'#595959', fontSize:20, marginLeft:8}} >
+                    Chapter 3                   
+                </Text>
+
+                <Text style={{fontSize:15, paddingTop:4, marginLeft:170, color:'#595959' }}> 
+                    student: 36/40 
+                </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            style={styles.textedit}
+            onPress={() => this.props.navigation.navigate('StudentAttend')} title="info4993" >
+                <Text style={{fontWeight:'900', color:'#595959', fontSize:20, marginLeft:8}} >
+                    Chapter 2                   
+                </Text>
+
+                <Text style={{fontSize:15, paddingTop:4, marginLeft:170, color:'#595959' }}> 
+                    student: 40/40 
+                </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            style={styles.textedit}
+            onPress={() => this.props.navigation.navigate('StudentAttend')} title="info4993" >
+                <Text style={{fontWeight:'900', color:'#595959', fontSize:20, marginLeft:8}} >
+                    Chapter 2                   
+                </Text>
+
+                <Text style={{fontSize:15, paddingTop:4, marginLeft:170, color:'#595959' }}> 
+                    student: 40/40 
+                </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            style={styles.textedit}
+            onPress={() => this.props.navigation.navigate('StudentAttend')} title="info4993" >
+                <Text style={{fontWeight:'900', color:'#595959', fontSize:20, marginLeft:8}} >
+                    Chapter 1                   
+                </Text>
+
+                <Text style={{fontSize:15, paddingTop:4, marginLeft:170, color:'#595959' }}> 
+                    student: 40/40 
+                </Text>
+            </TouchableOpacity>
             
             </View></ScrollView>
             <FAB 
@@ -104,7 +164,6 @@ export default class Chapter extends Component{
 const styles = StyleSheet.create({
     classtext:{
         flex:1,
-        height:hp('100%'),
         backgroundColor:'#ffffff',
         alignItems: 'center',
     },
