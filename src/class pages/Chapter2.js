@@ -1,4 +1,4 @@
-import React, { Component, navigation } from 'react';
+import React, { Component } from 'react';
 import { TextInput, View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp,
     listenOrientationChange as loc,
@@ -11,7 +11,7 @@ import Alertbutton2 from '../class pages/alertbutton2';
 import MyBackButton from './backbutton';
 import HeaderDrawer from '../components/HeaderDrawer';
 
-export default class Chapter extends Component{
+export default class Chapter2 extends Component{
     
     componentDidMount() {
         loc(this);
@@ -22,9 +22,7 @@ export default class Chapter extends Component{
       }
     render(){
         return(
-            <View style={{flex:1,}}>
             
-            <ScrollView>
             
             <View style={styles.classtext}>
 
@@ -34,7 +32,7 @@ export default class Chapter extends Component{
             </Text>
             <TouchableOpacity
             style={styles.textedit}
-            onPress={() => this.props.navigation.navigate('StudentAttend')} title="info4993" >
+            onPress={() => navigation.navigate('StudentAttend')} title="info4993" >
                 <Text style={{fontWeight:'900', color:'#595959', fontSize:20, marginLeft:8}} >
                     Chapter 8                   
                 </Text>
@@ -152,13 +150,9 @@ export default class Chapter extends Component{
                 </Text>
             </TouchableOpacity>
             
-            </View></ScrollView>
-            <FAB 
-                    style={styles.fab}
-                    icon="camera"
-                    onPress={() => this.props.navigation.navigate('Qrscanner')} 
-            />
             </View>
+            
+            
         )
     }
 }
@@ -178,26 +172,6 @@ const styles = StyleSheet.create({
         
     
       },
-      fab: {
-        position: 'absolute',
-        margin: 16,
-        right: 0,
-        bottom: 10,
-        backgroundColor:'#007acc'
-      },
-      header:{
-        flexDirection:'row',
-        width:wp('100%'), height:hp('8%'), backgroundColor:'#00994d',
-        shadowColor: "black",
-        shadowOffset: {
-          width: 5,
-          height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
-        elevation: 5,
-        alignItems:'center',
-        paddingHorizontal:22
-      }
+      
       
 });

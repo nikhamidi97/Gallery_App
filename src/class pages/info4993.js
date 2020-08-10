@@ -16,8 +16,9 @@ const info4993=()=> {
             
             tabBarOptions={{
             activeTintColor: '#ffffff',
+            inactiveTintColor:'#cccccc',
             labelStyle: {  fontWeight: 'bold' },          
-            style: { backgroundColor: '#455a64' },
+            style: { backgroundColor: '#00994d' },
           }}>
             <Tab.Screen name="Chapter" component={Chapter}                
               options={{

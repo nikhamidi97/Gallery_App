@@ -42,33 +42,55 @@
 // });
 
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, useWindowDimensions} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem, } from '@react-navigation/drawer';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import auth from '@react-native-firebase/auth';
 
 import IAttend from '../pages/IAttend';
 import Ewallet from '../pages/Ewallet';
 import IDcard2 from '../pages/ID card2';
+import { color } from 'react-native-reanimated';
 
 
-const Tab = createMaterialTopTabNavigator();
+const Drawer = createDrawerNavigator();
+
+function CustomDrawerContent(props) {
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+      <DrawerItem label="Help" onPress={() => alert('Link to help')} labelStyle={{color:'#ffffff'}} />
+    </DrawerContentScrollView>
+  );
+}
 
 const IDcard=()=> {
+  const dimensions = useWindowDimensions();
+
+  const isLargeScreen = dimensions.width >= 768;
   return (
     
-      <Tab.Navigator initialRouteName='ID Card'
-            tabBarOptions={{
-            activeTintColor: '#ffffff',
-            labelStyle: {  fontWeight: 'bold' },
-            
-            style: { backgroundColor: '#455a64', },
-          }}>
-        <Tab.Screen name="IAttend" component={IAttend} />
-        <Tab.Screen name="ID Card" component={IDcard2} />
-        <Tab.Screen name="Ewallet" component={Ewallet} />
-        
-      </Tab.Navigator>
+    <Drawer.Navigator initialRouteName="IDcard2"
+        drawerContent={props => <CustomDrawerContent {...props} /> }
+        drawerContentOptions={{
+
+          activeTintColor: '#ccffb3',
+          itemStyle: { marginVertical: 5 },
+          labelStyle:{color:'#ffffff'}
+        }}
+        drawerStyle={{
+        backgroundColor: '#1f2e2e',
+      }}
+      overlayColor="transparent">
+      <Drawer.Screen name="IDcard" component={IDcard2} />
+      <Drawer.Screen name="IAttend" component={IAttend} />
+      <Drawer.Screen name="Ewallet" component={Ewallet} />
+    </Drawer.Navigator>
     
   );
 }

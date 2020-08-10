@@ -1,44 +1,49 @@
 import React, { Component } from 'react';
-import { TextInput, View, ScrollView, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { TextInput, View, ScrollView, Text, StyleSheet, TouchableOpacity,color} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class MyClass extends Component{
-    render(){
+function MyClass ({navigation}){
+    
         return(
             
             <View >
+            <TouchableOpacity style={styles.header} onPress={() => navigation.openDrawer()}>
+            <Icon name="list-outline" color='white' size={20} />
+                <Text style={{fontSize:20, fontWeight:'bold', color:'#ffffff', marginHorizontal:15}}>Digital Matric</Text>
+            </TouchableOpacity>
                 <ScrollView >
             <View style={styles.classtext}>
             <View style={{marginBottom:10, marginTop:10,}}>
                 <Text style={{fontWeight:'300', fontSize:25, color:'#595959'}}>My Class</Text>
             </View>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => navigation.navigate('info4993')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4993 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('Chapter')} title="info4993">
+                    onPress={() => navigation.navigate('Chapter')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4024 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => navigation.navigate('info4993')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4993 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('Chapter')} title="info4993">
+                    onPress={() => navigation.navigate('Chapter')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4024 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => navigation.navigate('info4993')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4993 - SEMESTER 2 2019/2020
                     </Text>
@@ -50,25 +55,25 @@ export default class MyClass extends Component{
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => navigation.navigate('info4993')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4993 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => navigation.navigate('info4993')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4993 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => navigation.navigate('info4993')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4993 - SEMESTER 2 2019/2020
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() => navigation.navigate('info4993')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4993 - SEMESTER 2 2019/2020
                     </Text>
@@ -80,8 +85,10 @@ export default class MyClass extends Component{
                 
             </View>
         )
-    }
+   
 }
+
+export default MyClass;
 
 const styles = StyleSheet.create({
     classtext:{
@@ -102,5 +109,19 @@ const styles = StyleSheet.create({
         color:'#595959', fontSize:18
     
       },
+      header:{
+        flexDirection:'row',
+        width:wp('100%'), height:hp('8%'), backgroundColor:'#00994d',
+        shadowColor: "black",
+        shadowOffset: {
+          width: 5,
+          height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        elevation: 5,
+        alignItems:'center',
+        paddingHorizontal:22
+      }
      
 });

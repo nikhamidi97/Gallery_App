@@ -30,7 +30,7 @@ const Login = () =>{
 
 const styles = StyleSheet.create({
     container : {
-      backgroundColor :'#455a64',
+      backgroundColor :'#00994d',
       flex:1,
       alignItems:'center',
       justifyContent:'center'
