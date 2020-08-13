@@ -56,18 +56,11 @@ import IAttend from '../pages/IAttend';
 import Ewallet from '../pages/Ewallet';
 import IDcard2 from '../pages/ID card2';
 import { color } from 'react-native-reanimated';
+import ProfileInfo from '../components/ProfileInfo';
 
 
 const Drawer = createDrawerNavigator();
 
-function CustomDrawerContent(props) {
-  return (
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem label="Help" onPress={() => alert('Link to help')} labelStyle={{color:'#ffffff'}} />
-    </DrawerContentScrollView>
-  );
-}
 
 const IDcard=()=> {
   const dimensions = useWindowDimensions();
@@ -76,7 +69,6 @@ const IDcard=()=> {
   return (
     
     <Drawer.Navigator initialRouteName="IDcard2"
-        drawerContent={props => <CustomDrawerContent {...props} /> }
         drawerContentOptions={{
 
           activeTintColor: '#ccffb3',
@@ -90,6 +82,7 @@ const IDcard=()=> {
       <Drawer.Screen name="IDcard" component={IDcard2} />
       <Drawer.Screen name="IAttend" component={IAttend} />
       <Drawer.Screen name="Ewallet" component={Ewallet} />
+      <Drawer.Screen name="Profile" component={ProfileInfo} />
     </Drawer.Navigator>
     
   );

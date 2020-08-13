@@ -1,4 +1,4 @@
-import React, { Component, navigation } from 'react';
+import React, { Component } from 'react';
 import { TextInput, View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp,
     listenOrientationChange as loc,
@@ -9,7 +9,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import Alertbutton2 from '../class pages/alertbutton2';
 import MyBackButton from './backbutton';
-import HeaderDrawer from '../components/HeaderDrawer';
 
 export default class Chapter extends Component{
     
@@ -22,8 +21,7 @@ export default class Chapter extends Component{
       }
     render(){
         return(
-            <View style={{flex:1,}}>
-            
+            <View>
             <ScrollView>
             
             <View style={styles.classtext}>
@@ -165,7 +163,7 @@ export default class Chapter extends Component{
 
 const styles = StyleSheet.create({
     classtext:{
-        
+        flex:1,
         backgroundColor:'#ffffff',
         alignItems: 'center',
     },
@@ -183,21 +181,5 @@ const styles = StyleSheet.create({
         margin: 16,
         right: 0,
         bottom: 10,
-        backgroundColor:'#007acc'
       },
-      header:{
-        flexDirection:'row',
-        width:wp('100%'), height:hp('8%'), backgroundColor:'#00994d',
-        shadowColor: "black",
-        shadowOffset: {
-          width: 5,
-          height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
-        elevation: 5,
-        alignItems:'center',
-        paddingHorizontal:22
-      }
-      
 });

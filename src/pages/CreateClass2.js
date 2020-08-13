@@ -61,21 +61,22 @@ export default class CreateClass2 extends Component{
                 placeholderTextColor="#595959"
                 underlineColorAndroid='rgba(0,0,0,0)'
                 placeholder="class name"
-                
+                color='black'
                  />
 
             <TextInput style={styles.inputBox} 
                 placeholderTextColor="#595959"              
                 underlineColorAndroid='rgba(0,0,0,0)'
                 placeholder="class code" 
-                
+                color='black'
                 
                 />
             <TextInput style={styles.inputBox} 
                 placeholderTextColor="#595959"              
+                
                 underlineColorAndroid='rgba(0,0,0,0)'
                 placeholder="section" 
-                
+                color='black'
                 
                 />
             <>
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
         borderBottomWidth:0.4,
         paddingHorizontal: 10,
         fontSize: 18,
-        color: '#666666',
+        color: '#ffffff',
         marginVertical:8,
     },
     classtext:{

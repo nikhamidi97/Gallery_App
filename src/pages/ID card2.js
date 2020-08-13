@@ -1,57 +1,49 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Button, Image, TouchableOpacity, ScrollView, color  } from "react-native";
+import { View, Text, StyleSheet, Button, Image, TouchableOpacity, ScrollView, color, ImageBackground  } from "react-native";
 import auth from '@react-native-firebase/auth';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp, marginHorizontal as mh} from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/Ionicons';
-import ProfileInfo from "../components/ProfileInfo";
 
 function IDcard2({navigation}) {
   
     return (
       <View style={{flex:1,}}>
-      <TouchableOpacity style={styles.header} onPress={() => navigation.openDrawer()}>
-      <Icon name="list-outline" color='white' size={20} />
-        <Text style={{fontSize:20, fontWeight:'bold', color:'#ffffff', marginHorizontal:15}}>Digital Matric</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.header} onPress={() => navigation.openDrawer()}>
+        <Icon name="reorder-four-outline" color={'#ffffff'} size={20} />
+          <Text style={{fontSize:20, fontWeight:'bold', color:'#ffffff', marginHorizontal:15}}>Digital Matric</Text>
+        </TouchableOpacity>
       <ScrollView>
       
       <View style={styles.container}>
       <View style={
-        {backgroundColor:'#f2f2f2', marginTop:210,width:wp('100%'), 
-        height:hp('100%'), elevation: 3, position:'absolute'}}></View>
+        {backgroundColor:'#f2f2f2', marginTop:'50%',width:wp('100%'), 
+        height:hp('100%'), elevation: 3, position:'absolute',
+        borderTopLeftRadius:90}}></View>               
 
-        <View style={styles.profileview}>
-          <Image                 
-                style={{ 
-                  borderRadius:40,width:wp('18%'), height:hp('11%'), alignSelf:'center',
-                  marginLeft:10
-                  }}
-                source={require('../images/syed.jpg')}/>
-          <ProfileInfo/>
-                
-        </View>
-
-        <View style={styles.matric}>
-          
+        <View sty le={{alignItems:'center', marginTop:'30%'}}>
+          <ImageBackground 
+          style={styles.matric} 
+          source={require('../images/matriccard.png')}>
             <Image                 
-                style={{ borderRadius:8, marginTop:50,width:130, height:130}}
+                style={{ borderRadius:20, marginTop:110,width:wp('37%'), height:hp('20%')}}
                 source={require('../images/syed.jpg')}/>
             <View style={styles.textview}>
             <Text style={styles.textedit}>SYED ARIF</Text>
             <Text style={styles.textedit}>1718247</Text>
-            <Text style={styles.textedit}>KICT</Text></View>
+            <Text style={styles.textedit}>BIT</Text></View>
 
             <Image                 
-                style={{borderRadius:8, marginTop:20,width:100, height:100}}
+                style={{borderRadius:8, marginTop:'9%',width:wp('24%'), height:hp('14%')}}
                 source={require('../images/QR.png')}/>
                 <Text style={styles.textedit2}>17.07.2020  03.29pm</Text>
          
-                <TouchableOpacity style={{marginVertical:20}} onPress={()=> auth().signOut()} >
+                <TouchableOpacity style={{marginVertical:'8%'}} onPress={()=> auth().signOut()} >
                      <Text style={{color:'black'}} >Logout</Text>
-               </TouchableOpacity>
+               </TouchableOpacity></ImageBackground>
+               </View>
         </View>
         
-      </View>
+      
       </ScrollView>
       </View>
     );
@@ -63,30 +55,30 @@ const styles = StyleSheet.create({
   container: {
     
     justifyContent:'flex-start',    
-    backgroundColor: '#00994d',
+    backgroundColor: '#199591',
     textAlignVertical: 'top',
+    
     
     
   },
   matric: {
-    marginBottom:20,
-    marginTop:20,
+    marginVertical:20,
     alignSelf:'center',
-    alignItems: 'center',
-    backgroundColor :'#ffffff',
-    width:wp('90%'),
-    height:hp('80%'),
-    marginHorizontal:40,
-    borderRadius:10,
+    width:wp('90%'), 
+    height:hp('78%'), 
+    elevation:4, 
+    alignItems:'center',
+    marginBottom:20,
     shadowColor: "black",
     shadowOffset: {
-      width: 5,
-      height: 3,
+      width: 60,
+      height:1,
     },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-    elevation: 4,
-        
+    shadowOpacity: 20,
+    shadowRadius: 40,
+    borderWidth:0.2,
+    borderRadius:20
+    
     
   },
   textedit:{    
@@ -105,25 +97,25 @@ const styles = StyleSheet.create({
     alignItems:'center',
   },
   profileview:{
-    flexDirection:'row',
+    flexDirection:'column',
     alignSelf:'center',
     width:wp('90%'),
-    height:hp('20%'),
-    marginTop:20,
-    backgroundColor:'#ffffff',
-    borderRadius:10,
+    height:hp('17%'),
+    position:'absolute',
+    backgroundColor:'#76c485',
     shadowColor: "black",
     shadowOffset: {
       width: 5,
       height: 3,
     },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
+    shadowOpacity: 2,
+    shadowRadius: 10,
     elevation: 4,
+    marginTop:'15%', justifyContent:'center', borderRadius:10,
   },
   header:{
     flexDirection:'row',
-    width:wp('100%'), height:hp('8%'), backgroundColor:'#00994d',
+    width:wp('100%'), height:hp('8%'), backgroundColor:'#199591',
     shadowColor: "black",
     shadowOffset: {
       width: 5,
@@ -134,5 +126,5 @@ const styles = StyleSheet.create({
     elevation: 5,
     alignItems:'center',
     paddingHorizontal:22
-  }
+  },
 });

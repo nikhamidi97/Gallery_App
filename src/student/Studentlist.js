@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         width:wp('20%'),
         height:hp('11%'),           
         borderRadius:50,
-        backgroundColor:'#007acc',
+        backgroundColor:'#00b359',
      
     }
 });

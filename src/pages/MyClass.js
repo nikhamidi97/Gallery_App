@@ -8,9 +8,9 @@ function MyClass ({navigation}){
     
         return(
             
-            <View >
+            <View style={{flex:1,}}>
             <TouchableOpacity style={styles.header} onPress={() => navigation.openDrawer()}>
-            <Icon name="list-outline" color='white' size={20} />
+            <Icon name="reorder-four-outline" color={'#ffffff'} size={20} />
                 <Text style={{fontSize:20, fontWeight:'bold', color:'#ffffff', marginHorizontal:15}}>Digital Matric</Text>
             </TouchableOpacity>
                 <ScrollView >
@@ -49,7 +49,7 @@ function MyClass ({navigation}){
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('info4993')} title="info4993">
+                    onPress={() =>navigation.navigate('info4993')} title="info4993">
                     <Text style={styles.textedit}>
                         INFO 4993 - SEMESTER 2 2019/2020
                     </Text>
@@ -92,7 +92,7 @@ export default MyClass;
 
 const styles = StyleSheet.create({
     classtext:{
-        flex:1,
+        
         justifyContent: 'flex-start',
         alignItems: 'center',
         backgroundColor: "#ffffff",
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
       },
       header:{
         flexDirection:'row',
-        width:wp('100%'), height:hp('8%'), backgroundColor:'#00994d',
+        width:wp('100%'), height:hp('8%'), backgroundColor:'#199591',
         shadowColor: "black",
         shadowOffset: {
           width: 5,

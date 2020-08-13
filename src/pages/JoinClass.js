@@ -6,12 +6,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import JoinClass2 from './JoinClass2';
 
-function CreateClass ({navigation}){
+function JoinClass ({navigation}){
     
         return(
             <View>
                 <TouchableOpacity style={styles.header} onPress={() => navigation.openDrawer()}>
-            <Icon name="list-outline" color='white' size={20} />
+            <Icon name="reorder-four-outline" color={'#ffffff'} size={20} />
                 <Text style={{fontSize:20, fontWeight:'bold', color:'#ffffff', marginHorizontal:15}}>Digital Matric</Text>
             </TouchableOpacity>
             <View>
@@ -24,12 +24,12 @@ function CreateClass ({navigation}){
         )
     
 }
-export default CreateClass; 
+export default JoinClass; 
 
 const styles = StyleSheet.create({
     header:{
         flexDirection:'row',
-        width:wp('100%'), height:hp('8%'), backgroundColor:'#00994d',
+        width:wp('100%'), height:hp('8%'), backgroundColor:'#199591',
         shadowColor: "black",
         shadowOffset: {
           width: 5,

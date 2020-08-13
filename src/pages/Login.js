@@ -19,7 +19,11 @@ import Form from '../pages/Form';
 const Login = () =>{
         return(
             <View style ={styles.container}>
-              <Text style={styles.textstyle}>INTERNATIONAL ISLAMIC UNIVERSITY MALAYSIA</Text>
+              <View style={styles.textstyle}>
+              <Text style={{
+                fontSize:14,
+                color:'#ffffff',}}>INTERNATIONAL ISLAMIC UNIVERSITY MALAYSIA</Text>
+              </View>
               <Logo/>
               <Form/>                          
             </View>
@@ -30,33 +34,23 @@ const Login = () =>{
 
 const styles = StyleSheet.create({
     container : {
-      backgroundColor :'#00994d',
+      backgroundColor :'#1f2e2e',
       flex:1,
-      alignItems:'center',
-      justifyContent:'center'
+     
+      
+     
     },
     textstyle :{
-      fontSize:13,
-      color:'#ffffff',
+      
       marginVertical:20,
-      backgroundColor:'#1c313a',
+      backgroundColor:'#004d66',
       width:wp('100%'),
-      height:hp('7%'),
-      paddingVertical:9,
-      paddingHorizontal:45,
-      alignItems:'center',
-      justifyContent:'center',     
-
-    },
-    button:{
+      height:hp('6%'),
       justifyContent:'center',
-      backgroundColor :'#1c313a',
-      borderRadius :10,
-      paddingVertical:10,
-      marginBottom:30,  
-      width :300,
-  
-     },
+      alignItems:'center'
+      
+   
+    },
   
      loginbutton:{
           

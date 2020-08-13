@@ -73,8 +73,6 @@ import Studentlist from './src/student/Studentlist';
 import StudentAttend from './src/student/StudentAttend';
 import CreateClass2 from './src/pages/CreateClass2';
 import JoinClass2 from './src/pages/JoinClass2';
-import HeaderDrawer from './src/components/HeaderDrawer';
-import Chapter2 from './src/class pages/Chapter2';
 
 const Stack = createStackNavigator();
 
@@ -109,8 +107,6 @@ function App() {
         <Stack.Screen name="StudentAttend" component={StudentAttend} />
         <Stack.Screen name="CreateClass2" component={CreateClass2} />
         <Stack.Screen name="JoinClass2" component={JoinClass2} />
-        <Stack.Screen name="HeaderDrawer" component={HeaderDrawer} />
-        <Stack.Screen name="Chapter2" component={Chapter2} />
       </Stack.Navigator>
     </NavigationContainer>
   
