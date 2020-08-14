@@ -6,7 +6,7 @@ import { createMaterialBottomTabNavigator} from '@react-navigation/material-bott
 import Icon from 'react-native-vector-icons/Ionicons';
 import ProfilePage from './ProfilePage';
 import home from './home';
-import search from './search';
+import Search from './search';
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -15,10 +15,10 @@ const HomePage=()=> {
   return (
     
       <Tab.Navigator initialRouteName='home'
-        labeled={false}
+        
             activeColor="#f0edf6"
             inactiveColor="#505050"
-            barStyle={{  height:40, backgroundColor: 'black' }}>
+            barStyle={{  height:50, backgroundColor: 'black' }}>
         <Tab.Screen name="Home" component={home}
             options={{
               
@@ -27,9 +27,9 @@ const HomePage=()=> {
                   <Icon name="ios-home" color={color} size={20} />
                 ),
               }} />
-        <Tab.Screen name="search" component={search} 
+        <Tab.Screen name="search" component={Search} 
             options={{
-                tabBarLabel: '',
+                tabBarLabel: 'Search',
                 tabBarIcon: ({ color }) => (
                   <Icon name="search-sharp" color={color} size={20} />
                 ),
@@ -37,7 +37,7 @@ const HomePage=()=> {
               
         <Tab.Screen name="ProfilePage" component={ProfilePage} 
             options={{
-                tabBarLabel: '',
+                tabBarLabel: 'Profile',
                 tabBarIcon: ({ color }) => (
                   <Icon name="person-sharp" color={color} size={20} />
                 ),

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import auth from '@react-native-firebase/auth';
 import { View, Text, StyleSheet,TextInput,TouchableOpacity } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-class EmailAndPassword extends Component {
+const EmailAndPassword = (props) => {
     state={
         email:'',
         password:'',
@@ -39,8 +40,8 @@ class EmailAndPassword extends Component {
         })
     }
 
+  
 
-    render() {
         return (
             <View style={styles.container}>
                  <TextInput
@@ -59,12 +60,22 @@ class EmailAndPassword extends Component {
                      />
 
 
-                 <TouchableOpacity style={styles.buttonContainer} onPress={this.onBottomPress} >
-                     <Text style={styles.buttonText}>Login</Text>
+                 <TouchableOpacity  onPress={this.onBottomPress} >
+                 <LinearGradient
+                    colors={['#08d4c4', '#01ab9d']}
+                    style={styles.signIn}
+                    >
+                    <Text style={[styles.textSign, {
+                        color:'#fff'
+                    }]}>Login</Text>
+                </LinearGradient>
                  </TouchableOpacity>
                  
                  <TouchableOpacity style={styles.buttonAnom} onPress={this.onAnonymPress} >
                      <Text style={{color:"#3B3B98", alignSelf:"center"}}>Sign as anonymous</Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity style={styles.buttonAnom} onPress={() =>{}} >
+                     <Text style={{color:"#3B3B98", alignSelf:"center"}}>Register </Text>
                  </TouchableOpacity>
 
                  <Text style={styles.errorText} >
@@ -72,13 +83,14 @@ class EmailAndPassword extends Component {
                 </Text>
             </View>
         );
-    }
+    
 }
+export default EmailAndPassword;
 
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        
         padding:20
     },
     input:{
@@ -112,8 +124,18 @@ const styles = StyleSheet.create({
         marginTop:20,
         padding:15,
         borderRadius:8
+    },
+    signIn: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    textSign: {
+        fontSize: 18,
+        fontWeight: 'bold'
     }
 });
 
 //make this component available to the app
-export default EmailAndPassword;

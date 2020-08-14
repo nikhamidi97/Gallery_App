@@ -19,8 +19,8 @@ export default class home extends Component{
             </ScrollView>
             <FAB 
                     style={styles.fab}
-                    icon="camera"
-                    onPress={() => console.log('Pressed')}
+                    icon="plus"
+                    onPress={( ) => console.log('Pressed')}
             />
              
         </View>

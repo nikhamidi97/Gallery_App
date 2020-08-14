@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 const CategoriesCard = ( n) => (
    
-    <Card>
+  <View>
   <TouchableOpacity   >
   <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
   <Card.Title
@@ -45,8 +45,8 @@ const CategoriesCard = ( n) => (
   />
   </TouchableOpacity>
   <Divider style={styles.lastdivider}/>
-  </Card>
- 
+
+ </View>
 
 );
 export default CategoriesCard;
