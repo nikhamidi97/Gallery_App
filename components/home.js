@@ -6,8 +6,8 @@ import { View, StyleSheet,ScrollView } from 'react-native';
 import CategoriesCard from './CategoriesCard';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-export default class home extends Component{
-    render(){
+export default function home ({navigation}){
+    
     return (
         
         <View style={styles.container}>
@@ -20,7 +20,7 @@ export default class home extends Component{
             <FAB 
                     style={styles.fab}
                     icon="plus"
-                    onPress={( ) => console.log('Pressed')}
+                    onPress={( ) => console.log('haii')}
             />
              
         </View>
@@ -28,7 +28,7 @@ export default class home extends Component{
        
     );
     
-}}
+}
 
 // define your styles
 const styles = StyleSheet.create({

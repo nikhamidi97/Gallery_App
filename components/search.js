@@ -82,7 +82,7 @@ import {PhotoList} from '../model/imageList';
 //import all the components we will need
 
 
-let photoRef = db.ref('/photos');
+let photoRef = db.ref('/photos/photoList');
 
 export default class Search extends Component {
   
@@ -104,28 +104,13 @@ export default class Search extends Component {
         })
       });
       this.setState({ photoList: item});
-      // if(data){
-      //   let photoData = Object.values(data);
-      //   this.setState({photoList: photoData});
-      //   console.log(this.state.photoList);
-      // }
+   
     });
   }
 
   render() {
     return (
-      // this.state.photoList.map((data, index) => {
-      //   return(
-      //     <View>
-      //       <Text>{data.url}</Text>
-      //       <Image source={{ uri: data.url } }
-      //       style={{height:150, width:150,}}   />
-           
-      //     </View>
-        
-         
-      //   )
-      // })
+ 
         <View style={styles.MainContainer}>
         <View style={{alignItems:'center'}}>
         <Text style={{fontSize:30, color:'#4d4d4d', marginVertical:10}}>Discover</Text>

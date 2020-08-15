@@ -3,14 +3,14 @@ import { db } from '../config/database';
 import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
 
-export const addPhoto =  (url, matricno, major, year, status) => {
-    db.ref('/photos').set({
-        name: name,
-        matricno: matricno,
-        major: major,
-        year: year,
-        status: status
-    }, () => Actions.ListScreen());
+export const addPhoto =  (url, category, price, uid, uuid) => {
+    db.ref('/photos').child(uuid).set({
+        url: url,
+        category: category,
+        price: price,
+        uid: uid,
+    }, 
+    () => {console.log('image added')});
 }
 
 

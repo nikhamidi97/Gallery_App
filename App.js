@@ -14,6 +14,7 @@ import home from './components/home';
 import Search from './components/search';
 import SplashScreen from './components/SplashScreen';
 import ProfileGallery from './components/ProfileGallery';
+import UploadForm from './components/UploadForm';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ function App() {
       <Stack.Screen name="home" component={home} />
       <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="ProfileGallery" component={ProfileGallery} />
+      <Stack.Screen name="UploadForm" component={UploadForm} />
     </Stack.Navigator>
     </NavigationContainer>
   );
